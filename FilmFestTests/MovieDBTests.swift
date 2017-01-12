@@ -25,9 +25,34 @@ class MovieStructTests: XCTestCase {
         // Given
         let movie = Movie(title: "Starwars: Rogue One")
         
-        // When
-        
         // Then
         XCTAssertEqual(movie.title, "Starwars: Rogue One")
+    }
+    
+    func testCompareMoviesEqual() {
+        // Given 
+        let movie1 = Movie(title: "Starwars")
+        let movie2 = Movie(title: "Starwars")
+        
+        // Then
+        XCTAssert(movie1 == movie2)
+    }
+    
+    func testCompareMoviesNotEqual() {
+        // Given
+        let movie1 = Movie(title: "Starwars")
+        let movie2 = Movie(title: "Noob")
+        
+        // Then 
+        XCTAssert(movie1 != movie2)
+    }
+    
+    func testCompareMoviesReleaseDateNotEqual() {
+        // Given
+        let movie1 = Movie(title: "Starwars", releaseDate: "11/12/16")
+        let movie2 = Movie(title: "Starwars", releaseDate: "12/12/16")
+        
+        // Then 
+        XCTAssert(movie1 != movie2)
     }
 }
