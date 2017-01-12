@@ -25,5 +25,4 @@ class MovieStructTests: XCTestCase {
         let movie = Movie(title: "Starwars: Rogue One")
         XCTAssertEqual(movie.title, "Starwars: Rogue One")
     }
-    
 }

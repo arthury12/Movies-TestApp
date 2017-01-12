@@ -24,24 +24,26 @@ class MovieManagerTests: XCTestCase {
         super.tearDown()
     }
     
-    func testMoviesToSeeCount_ReturnsZero() {
+    func testMoviesToSeeCount() {
         XCTAssertEqual(movieManager.moviesToSeeCount, 0)
     }
     
-    func testMoviesSeen_ReturnsZero() {
+    func testMoviesSeen() {
         XCTAssertEqual(movieManager.moviesSeenCount, 0)
     }
     
-    func testMoviesToSeeCount_ShouldBeOneAfterMovieAdded() {
+    func testMoviesToSeeCountAfterAddingMovies() {
         movieManager.addMovieToLibrary(movie: Movie(title: "Sci-fi Adventure"))
         XCTAssertEqual(movieManager.moviesToSeeCount, 1)
     }
     
-    func testMovieAtIndex_ReturnsLastAddedMovie() {
+    func testMovieAtIndex() {
         let movie = Movie(title: "Action Thriller")
         movieManager.addMovieToLibrary(movie: movie)
         
         let returnedMovieAtIndex = movieManager.movieAtIndex(index: 0)
         XCTAssertEqual(movie.title, returnedMovieAtIndex.title)
     }
+    
+    func 
 }
