@@ -22,7 +22,12 @@ class MovieStructTests: XCTestCase {
     }
     
     func testSetMovieTitle() {
+        // Given
         let movie = Movie(title: "Starwars: Rogue One")
+        
+        // When
+        
+        // Then
         XCTAssertEqual(movie.title, "Starwars: Rogue One")
     }
 }

@@ -9,17 +9,29 @@
 import Foundation
 
 class MovieManager {
-    var moviesToSeeCount = 0
-    let moviesSeenCount = 0
+    var moviesToSeeCount: Int { return moviesToSeeArray.count }
+    var moviesSeenCount: Int { return moviesSeenArray.count }
     
     private var moviesToSeeArray = [Movie]()
+    private var moviesSeenArray = [Movie]()
     
     func addMovieToLibrary(movie: Movie) {
-        moviesToSeeCount += 1
         moviesToSeeArray.append(movie)
     }
     
     func movieAtIndex(index: Int) -> Movie {
         return moviesToSeeArray[index]
     }
+    
+    func favMovieAt(index: Int) {
+        guard index < moviesToSeeCount else {return}
+        
+        let favoritedMovie = moviesToSeeArray.remove(at: index)
+        moviesSeenArray.append(favoritedMovie)
+    }
+    
+    func returnFavMovieAt(index: Int) -> Movie {
+        return moviesSeenArray[index]
+    }
+
 }
