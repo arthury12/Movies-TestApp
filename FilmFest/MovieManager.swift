@@ -34,4 +34,8 @@ class MovieManager {
         return moviesSeenArray[index]
     }
 
+    func clearMovies() {
+        moviesSeenArray.removeAll()
+        moviesToSeeArray.removeAll()
+    }
 }

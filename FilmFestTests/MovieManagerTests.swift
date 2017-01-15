@@ -104,4 +104,19 @@ class MovieManagerTests: XCTestCase {
         // Then
         XCTAssertEqual(movie.title, returnedMovie.title)
     }
+    
+    func testClearMovies() {
+        // Given 
+        movieManager.addMovieToLibrary(movie: Movie(title: "Moana"))
+        movieManager.addMovieToLibrary(movie: Movie(title: "San Andreas"))
+        movieManager.favMovieAt(index: 0)
+        
+        XCTAssert(movieManager.moviesSeenCount == 1)
+        XCTAssert(movieManager.moviesSeenCount == 1)
+        
+        movieManager.clearMovies()
+        
+        XCTAssert(movieManager.moviesSeenCount == 0)
+        XCTAssert(movieManager.moviesSeenCount == 0)
+    }
 }
