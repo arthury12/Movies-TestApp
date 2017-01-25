@@ -25,8 +25,21 @@ class MainViewControllerTests: XCTestCase {
         super.tearDown()
     }
     
-    func testMovieLibraryVC_TableNotNil() {
+    func testMovieLibraryVC() {
         XCTAssertNotNil(movieLibVC.movieTableView)
     }
     
+    func testViewDidLoad() {
+        XCTAssertNotNil(movieLibVC.movieTableView.dataSource)
+        XCTAssertTrue(movieLibVC.movieTableView.dataSource is MovieLibraryDataService)
+    }
+    
+    func testViewDidLoad_SetsDelegate() {
+        XCTAssertNotNil(movieLibVC.movieTableView.delegate)
+        XCTAssertTrue(movieLibVC.movieTableView.delegate is MovieLibraryDataService)
+    }
+    
+    func testViewDidLoad_SetDelegateAndDataSourceSameObject() {
+        XCTAssertEqual(movieLibVC.movieTableView.delegate as! MovieLibraryDataService, movieLibVC.movieTableView.dataSource as! MovieLibraryDataService)
+    }
 }

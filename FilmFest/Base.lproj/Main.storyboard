@@ -76,10 +76,12 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="dataService" destination="vHJ-R7-p1C" id="gAH-AT-dUp"/>
                         <outlet property="movieTableView" destination="FL8-wV-qWu" id="FTO-Oi-mVY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <customObject id="vHJ-R7-p1C" userLabel="MovieLibraryDataService" customClass="MovieLibraryDataService" customModule="FilmFest" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="32.799999999999997" y="39.130434782608695"/>
         </scene>
